@@ -24,6 +24,7 @@
     <!-- Theme CSS -->
     <link href="css/agency.min.css" rel="stylesheet">
     <link href="css/events.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,9 +36,6 @@
 </head>
 
 <body id="page-top" class="index">
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
@@ -161,29 +159,18 @@
                        friends in one place? Got a question for #python or need
                        help from the gurus in #geoserver? Enter your email address here to request an invitation:</p>
 
-                        <form class="form-inline" id="email-form" onsubmit="formSubmit(); return false;">
+                        <form class="form-inline" id="email-form">
                           <div class="form-group">
                             <input type="email" class="form-control"
                             name="email" id="email_address" value="test@example.com">
                           </div>
-                          <button type="submit" class="btn btn-primary">Request invitation</button>
-                          <script type="text/javascript">
-                            function formSubmit(){
-                                var email = $('#email_address').val();
-                                $.get("https://robodonut.pythonanywhere.com/newuser/"+email,
-                                        $.noop)
-                                .always(function() {
-                                    $( ".form_submitted" ).html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: gisdevslack@gmail.com");
-                                });
-                            };
-                          </script>
+                          <button type="submit" class="btn btn-xl">Request invitation</button>
                         </form>
 
-                        <span class="form_submitted text-muted">
-                        </span>
-
-
+                        <div class="form_submitted text-muted">
+                        </div>
                 </div>
+
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -545,6 +532,8 @@
         </div>
     </footer>
 
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -555,6 +544,19 @@
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
 
+    <script type="text/javascript">
+    function formSubmit(){
+        var email = $('#email_address').val();
+        $.get("https://robodonut.pythonanywhere.com/newuser/"+email,
+                $.noop)
+        .always(function() {
+            $( ".form_submitted" ).html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: gisdevslack@gmail.com");
+        });
+        return false;
+    };
+    var el = $("#email-form");
+    el.submit(formSubmit);
+    </script>
 </body>
 
 </html>

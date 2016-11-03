@@ -1,0 +1,12 @@
+div.form-group {
+    margin: 1em;
+}
+
+button {
+    margin: 2em;
+}
+
+.form_submitted {
+    margin: 2em;
+    font-weight: bold;
+}
