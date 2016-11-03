@@ -35,6 +35,8 @@
 </head>
 
 <body id="page-top" class="index">
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -157,9 +159,30 @@
                     <p class="text-muted">Read the Code of Conduct and like
                        what you see? Excited to make 1000+ other geospatial
                        friends in one place? Got a question for #python or need
-                       help from the gurus in #geoserver? <br>
-                       <a href="https://julien24.typeform.com/to/kGPqYr">Enter
-                        your email address here to request an invitation</a></p>
+                       help from the gurus in #geoserver? Enter your email address here to request an invitation:</p>
+
+                        <form class="form-inline" id="email-form" onsubmit="formSubmit(); return false;">
+                          <div class="form-group">
+                            <input type="email" class="form-control"
+                            name="email" id="email_address" value="test@example.com">
+                          </div>
+                          <button type="submit" class="btn btn-primary">Request invitation</button>
+                          <script type="text/javascript">
+                            function formSubmit(){
+                                var email = $('#email_address').val();
+                                $.get("https://robodonut.pythonanywhere.com/newuser/"+email,
+                                        $.noop)
+                                .always(function() {
+                                    $( ".form_submitted" ).html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: gisdevslack@gmail.com");
+                                });
+                            };
+                          </script>
+                        </form>
+
+                        <span class="form_submitted text-muted">
+                        </span>
+
+
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -522,9 +545,6 @@
         </div>
     </footer>
 
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
