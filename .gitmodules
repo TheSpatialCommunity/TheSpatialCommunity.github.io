@@ -1,0 +1,3 @@
+[submodule "documents"]
+	path = documents
+	url = https://github.com/TheSpatialCommunity/documents
