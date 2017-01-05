@@ -166,7 +166,7 @@
                             <input type="email" class="form-control"
                             name="email" id="email_address" placeholder="test@example.com">
                           </div>
-                          <button type="submit" class="btn btn-xl">Request invitation</button>
+                          <button type="submit" class="btn btn-xl" id="submit_button">Request invitation</button>
                         </form>
 
                         <div class="form_submitted text-muted">
@@ -555,10 +555,11 @@
     <script type="text/javascript">
     function formSubmit(){
         var email = $('#email_address').val();
-        $.get("https://robodonut.pythonanywhere.com/newuser/"+email,
-                $.noop)
-        .always(function() {
-            $( ".form_submitted" ).html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: gisdevslack@gmail.com");
+        $.get("https://robodonut.pythonanywhere.com/newuser/"+email, $.noop)
+            .always(function() {
+                $( ".form_submitted" ).html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: gisdevslack@gmail.com");
+                $("#submit_button").prop("disabled",true);
+            }
         });
         return false;
     };
