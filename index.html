@@ -555,12 +555,12 @@
     <script type="text/javascript">
     function formSubmit(){
         var email = $('#email_address').val();
-        $.get("https://robodonut.pythonanywhere.com/newuser/"+email, $.noop)
+        $.get("https://robodonut.pythonanywhere.com/newuser/" + email,
+                $.noop)
             .always(function() {
-                $( ".form_submitted" ).html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: gisdevslack@gmail.com");
-                $("#submit_button").prop("disabled",true);
-            })
-        });
+                $(".form_submitted").html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: gisdevslack@gmail.com");
+                $("#submit_button").prop("disabled", true);
+            });
         return false;
     };
     var el = $("#email-form");
