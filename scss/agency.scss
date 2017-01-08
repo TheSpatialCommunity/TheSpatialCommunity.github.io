@@ -16,6 +16,15 @@ body {
     color: $theme-primary;
 }
 
+.large {
+    font-size: 16px !important;
+}
+.italic {
+    font-style: italic;
+}
+.leader {
+    padding-top: 25px;
+}
 p {
     font-size: 14px;
     line-height: 1.75;
@@ -34,14 +43,14 @@ a.active {
 }
 
 a {
-    color: $theme-primary;
+    color: darken($theme-primary, 20%);
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: darken($theme-primary, 10%);
+    color: darken($theme-primary, 30%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -220,7 +229,7 @@ header {
 // Global Section Styles
 
 section {
-    padding: 100px 0;
+    padding: 75px 0;
     h2.section-heading {
         font-size: 40px;
         margin-top: 0;
@@ -232,16 +241,16 @@ section {
         text-transform: none;
         font-style: italic;
         font-weight: 400;
-        margin-bottom: 75px;
+        margin-bottom: 25px;
     }
 }
-
+/*
 @media(min-width:768px) {
     section {
         padding: 150px 0;
     }
 }
-
+*/
 // Services Section
 
 .service-heading {
