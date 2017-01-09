@@ -16,6 +16,10 @@ body {
     color: $theme-primary;
 }
 
+.row {
+    margin: 5px !important;
+}
+
 .large {
     font-size: 16px !important;
 }
@@ -85,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 3px;
     font-size: 18px;
     padding: 20px 40px;
+    margin: 5px;
 }
 
 // Custom Navigation Bar
@@ -244,13 +249,13 @@ section {
         margin-bottom: 25px;
     }
 }
-/*
+
 @media(min-width:768px) {
     section {
         padding: 150px 0;
     }
 }
-*/
+
 // Services Section
 
 .service-heading {
