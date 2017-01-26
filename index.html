@@ -548,7 +548,7 @@
                     <ul class="list-inline quicklinks">
                         <li><a href="https://github.com/TheSpatialCommunity/documents/blob/master/COC.md" target="_new">Code of Conduct</a>
                         </li>
-                        <li><a href="https://gisdevs.slack.com">Slack Team</a>
+                        <li><a href="https://thespatialcommunity.slack.com">Slack Team</a>
                         </li>
                     </ul>
                 </div>
@@ -574,7 +574,7 @@
         $.get("https://robodonut.pythonanywhere.com/newuser/" + email,
                 $.noop)
             .always(function() {
-                $(".form_submitted").html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: gisdevslack@gmail.com");
+                $(".form_submitted").html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: thespatialcommunity@gmail.com");
                 $("#submit_button").prop("disabled", true);
             });
         return false;
