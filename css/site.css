@@ -8,6 +8,7 @@ button {
 
 .form_submitted {
     margin: 2em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
@@ -18,4 +19,8 @@ hr {
     border-top: 1px solid #000;
     margin: 1em 0;
     padding: 0; 
+}
+
+.team-member .img-circle{
+    max-width: 100px;
 }
