@@ -161,7 +161,7 @@
                        friends in one place? Got a question for #python or need
                        help from the gurus in #geoserver? Enter your email address here to request an invitation:</p>
                     
-                        <form class="form-inline" id="email-form" style="display:none">
+                        <form class="form-inline" id="email-form">
                           <div class="form-group">
                             <input type="email" class="form-control"
                             name="email" id="email_address" placeholder="test@example.com">
@@ -186,11 +186,11 @@
                  everything humming along smoothly.</p>
                 </div>
             </div>
-            <div class="row col-md-12 text-center"> <!-- temp signup form - remove when superinvite is back -->
+            <!--<div class="row col-md-12 text-center">
                         <div id="temp_signup" style="font-weight:bold">
                             <a class="btn btn-xl" href="https://join.slack.com/t/thespatialcommunity/shared_invite/zt-ij2ygqzm-50gLh_uJzZ3X5gFUopsYrw">Click here to join after looking through our Code of Conduct</a>
                         </div>
-            </div>
+            </div> <!-- temp signup form - remove when superinvite is back -->
         </div>
     </section>
 
@@ -768,7 +768,7 @@ For right side, in the top list element of the item, define it as class="timelin
     <script type="text/javascript">
     function formSubmit(){
         var email = $('#email_address').val();
-        $.get("https://thespatialcommunity.pythonanywhere.com/newuser/" + email,
+        $.get("https://thespatialcommunity.pythonanywhere.com/simplenewuser/" + email,
                 $.noop)
             .always(function() {
                 $(".form_submitted").html("Thank you! Your request has been received - keep an eye on your inbox for an invitation. If you don't hear anything within a day, shoot us an email: thespatialcommunity@gmail.com");
