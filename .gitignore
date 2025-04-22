@@ -3,3 +3,5 @@ vendor/
 node_modules
 yarn.lock
 
+#mac stuff
+.DS_Store
